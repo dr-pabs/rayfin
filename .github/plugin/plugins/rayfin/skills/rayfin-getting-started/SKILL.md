@@ -48,7 +48,7 @@ project and continue in place. Never stand up a nested or sibling project.
   `rayfin docs`. Stop using this skill.
 - **Existing non-Rayfin app here →** add Rayfin in place with `npx rayfin init` (don't
   scaffold a separate project), then load the in-project skill.
-- **Empty directory →** scaffold (below), then `cd` in and load the in-project skill.
+- **Empty directory →** scaffold (below), then load the in-project skill from the project root.
 
 ## Scaffold a new project
 
@@ -69,5 +69,8 @@ npx rayfin init [directory]
 ```
 
 Prefer a gallery template matching the user's domain (events, field service, todo, CRUD) over
-an empty project — it ships a working data model, auth, and UI. After scaffolding, `cd` into
-the project and load its `.agents/skills/rayfin/SKILL.md`.
+an empty project — it ships a working data model, auth, and UI. Mind the project root before
+loading the in-project skill: `create-rayfin` creates a child project directory (named from
+`--project-name`, slugified), so `cd` into it; an in-place `rayfin init` scaffolds in the
+current directory, so you're already there. Once at the project root, load its
+`.agents/skills/rayfin/SKILL.md`.
